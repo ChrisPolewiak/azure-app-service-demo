@@ -30,12 +30,12 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">DEV <?=$_SERVER["APPSETTING_AppName"]?></h3>
+              <h3 class="masthead-brand"><?=$_SERVER["APPSETTING_AppName"]?></h3>
             </div>
           </div>
 
           <div class="inner cover">
-            <h1 class="cover-heading">Welcome</h1>
+            <h1 class="cover-heading">Welcome 2.0</h1>
 <?php
   if( isset($_SERVER["AUTH_USER"]) && $_SERVER["AUTH_TYPE"]=="facebook" )
   {
