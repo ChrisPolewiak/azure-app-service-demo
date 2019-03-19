@@ -30,7 +30,7 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand"><?=$_SERVER["APPSETTING_AppName"]?></h3>
+              <h3 class="masthead-brand">DEV <?=$_SERVER["APPSETTING_AppName"]?></h3>
             </div>
           </div>
 
