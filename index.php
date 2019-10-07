@@ -18,23 +18,6 @@
   </head>
 
   <body>
-<<<<<<< Updated upstream
-
-    <div class="site-wrapper">
-
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand"><?=$_SERVER["APPSETTING_AppName"]?></h3>
-            </div>
-          </div>
-
-          <div class="inner cover">
-            <h1 class="cover-heading">Welcome</h1>
-=======
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
       <h5 class="my-0 mr-md-auto font-weight-normal">Azure - <?php echo $_ENV["APPSETTING_AppName"] ?></h5>
       <nav class="my-2 my-md-0 mr-md-3">
@@ -44,7 +27,6 @@
         <a class="p-2 text-dark" href="#">Pricing</a>
       </nav>
       <a class="btn btn-outline-primary" href="#">
->>>>>>> Stashed changes
 <?php
 // LOGIN
 if ( isset($_ENV["WEBSITE_AUTH_ENABLED"]) )
@@ -80,35 +62,36 @@ if( isset($_SERVER["HTTP_X_MS_CLIENT_PRINCIPAL_ID"]) && $_SERVER["HTTP_X_MS_CLIE
 }
 ?>
       </div>
-
-<footer class="pt-4 my-md-5 pt-md-5 border-top">
-    <div class="row">
-      <div class="col-6 col-md">
-        <h5>Learning</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="https://docs.microsoft.com/pl-pl/learn/azure/">Wprowadzenie do platformy Azure</a></li>
-          <li><a class="text-muted" href="https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/">Azure fundamentals</a></li>
-          <li><a class="text-muted" href="https://www.pluralsight.com/partners/microsoft/azure/">Pluralsight - Rock Your Azure role</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Documentation</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="https://docs.microsoft.com/pl-pl/azure/">Documentation Index</a></li>
-          <li><a class="text-muted" href="https://docs.microsoft.com/pl-pl/azure/app-service/">App Service</a></li>
-          <li><a class="text-muted" href="https://docs.microsoft.com/pl-pl/dotnet/azure/?view=azure-dotnet">Azure for .NET developers</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Try for free</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="https://azure.microsoft.com/pl-pl/free/">Start for Free</a></li>
-          <li><a class="text-muted" href="https://azure.microsoft.com/pl-pl/free/students/">Azure for Students</a></li>
-          <li><a class="text-muted" href="https://azure.microsoft.com/pl-pl/free/free-account-faq/">Free Services</a></li>
-        </ul>
-      </div>
     </div>
-  </footer>
+
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+      <div class="row">
+        <div class="col-6 col-md">
+          <h5>Learning</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="https://docs.microsoft.com/pl-pl/learn/azure/">Wprowadzenie do platformy Azure</a></li>
+            <li><a class="text-muted" href="https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/">Azure fundamentals</a></li>
+            <li><a class="text-muted" href="https://www.pluralsight.com/partners/microsoft/azure/">Pluralsight - Rock Your Azure role</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Documentation</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="https://docs.microsoft.com/pl-pl/azure/">Documentation Index</a></li>
+            <li><a class="text-muted" href="https://docs.microsoft.com/pl-pl/azure/app-service/">App Service</a></li>
+            <li><a class="text-muted" href="https://docs.microsoft.com/pl-pl/dotnet/azure/?view=azure-dotnet">Azure for .NET developers</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Try for free</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="https://azure.microsoft.com/pl-pl/free/">Start for Free</a></li>
+            <li><a class="text-muted" href="https://azure.microsoft.com/pl-pl/free/students/">Azure for Students</a></li>
+            <li><a class="text-muted" href="https://azure.microsoft.com/pl-pl/free/free-account-faq/">Free Services</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
