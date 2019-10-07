@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title><?=$_SERVER["APPSETTING_AppName"]?></title>
+    <title><?php echo $_ENV["APPSETTING_AppName"] ?></title>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
 
     <!-- Bootstrap core CSS -->
@@ -21,6 +18,7 @@
   </head>
 
   <body>
+<<<<<<< Updated upstream
 
     <div class="site-wrapper">
 
@@ -36,34 +34,81 @@
 
           <div class="inner cover">
             <h1 class="cover-heading">Welcome</h1>
+=======
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h5 class="my-0 mr-md-auto font-weight-normal">Azure - <?php echo $_ENV["APPSETTING_AppName"] ?></h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="#">Features</a>
+        <a class="p-2 text-dark" href="#">Enterprise</a>
+        <a class="p-2 text-dark" href="#">Support</a>
+        <a class="p-2 text-dark" href="#">Pricing</a>
+      </nav>
+      <a class="btn btn-outline-primary" href="#">
+>>>>>>> Stashed changes
 <?php
-  if( isset($_SERVER["AUTH_USER"]) && $_SERVER["AUTH_TYPE"]=="facebook" )
-  {
+// LOGIN
+if ( isset($_ENV["WEBSITE_AUTH_ENABLED"]) )
+{
+	if ( isset($_SERVER["HTTP_X_MS_CLIENT_PRINCIPAL_ID"]) )
+	{
+		echo "<a href='/.auth/logout?post_logout_redirect_uri=/'>Sign out</a>";
+	}
+	else
+	{
+		echo "<a href='/.auth/login/facebook'>Log in with Facebook</a>";
+	}
+}
 ?>
-  $fb_profile_image = file_get_contents("https://graph.facebook.com/me/picture?width=378&height=378&access_token=" . $_SERVER["HTTP_X_MS_TOKEN_FACEBOOK_ACCESS_TOKEN"]);
+      </a>
+    </div>
 
-            <p class="lead">Authentication Provider: <?=$_SERVER["AUTH_TYPE"]?></p>
-            <p class="lead">
-              <img class="rounded mx-auto d-block" style='width:378px;height:378px;' id='base64image' src='data:image/jpeg;base64, <?=base64_encode($fb_profile_image)?>' /><br>
-              Username: <?=$_SERVER["AUTH_USER"]?>
-            </p>
-            
+    <div class="container">
+      <h1 class="cover-heading">Welcome <?=$_SERVER["HTTP_X_MS_CLIENT_PRINCIPAL_NAME"]?></h1>
+
 <?php
-  }
+// GET PROFILE
+if( isset($_SERVER["HTTP_X_MS_CLIENT_PRINCIPAL_ID"]) && $_SERVER["HTTP_X_MS_CLIENT_PRINCIPAL_IDP"]=="facebook" )
+{
+	$fb_profile_image = file_get_contents("https://graph.facebook.com/me/picture?width=378&height=378&access_token=" . $_SERVER["HTTP_X_MS_TOKEN_FACEBOOK_ACCESS_TOKEN"]);
 ?>
-          </div>
 
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Cover template for <a href="https://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-            </div>
-          </div>
+        <p class="lead">
+          <img class="rounded mx-auto d-block" style='width:378px;height:378px;' id='base64image' src='data:image/jpeg;base64, <?=base64_encode($fb_profile_image)?>' /><br>
+        </p>
 
-        </div>
-
+<?php
+}
+?>
       </div>
 
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-6 col-md">
+        <h5>Learning</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="https://docs.microsoft.com/pl-pl/learn/azure/">Wprowadzenie do platformy Azure</a></li>
+          <li><a class="text-muted" href="https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/">Azure fundamentals</a></li>
+          <li><a class="text-muted" href="https://www.pluralsight.com/partners/microsoft/azure/">Pluralsight - Rock Your Azure role</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Documentation</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="https://docs.microsoft.com/pl-pl/azure/">Documentation Index</a></li>
+          <li><a class="text-muted" href="https://docs.microsoft.com/pl-pl/azure/app-service/">App Service</a></li>
+          <li><a class="text-muted" href="https://docs.microsoft.com/pl-pl/dotnet/azure/?view=azure-dotnet">Azure for .NET developers</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Try for free</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="https://azure.microsoft.com/pl-pl/free/">Start for Free</a></li>
+          <li><a class="text-muted" href="https://azure.microsoft.com/pl-pl/free/students/">Azure for Students</a></li>
+          <li><a class="text-muted" href="https://azure.microsoft.com/pl-pl/free/free-account-faq/">Free Services</a></li>
+        </ul>
+      </div>
     </div>
+  </footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
