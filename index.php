@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-red border-bottom shadow-sm">
       <h5 class="my-0 mr-md-auto font-weight-normal">Azure - <?php echo $_ENV["APPSETTING_AppName"] ?></h5>
       <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-dark" href="#">Features</a>
@@ -26,22 +26,20 @@
         <a class="p-2 text-dark" href="#">Support</a>
         <a class="p-2 text-dark" href="#">Pricing</a>
       </nav>
-      <a class="btn btn-outline-primary" href="#">
 <?php
 // LOGIN
 if ( isset($_ENV["WEBSITE_AUTH_ENABLED"]) )
 {
 	if ( isset($_SERVER["HTTP_X_MS_CLIENT_PRINCIPAL_ID"]) )
 	{
-		echo "<a href='/.auth/logout?post_logout_redirect_uri=/'>Sign out</a>";
+		echo "<a class='btn btn-outline-primary' href='/.auth/logout?post_logout_redirect_uri=/'>Sign out</a>";
 	}
 	else
 	{
-		echo "<a href='/.auth/login/facebook'>Log in with Facebook</a>";
+		echo "<a class='btn btn-outline-primary' href='/.auth/login/facebook'>Log in with Facebook</a>";
 	}
 }
 ?>
-      </a>
     </div>
 
     <div class="container">
